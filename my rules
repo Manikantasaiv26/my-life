@@ -1,0 +1,86 @@
+Continuous Integration - Jenkins
+Introduction -
+Understanding continuous integration 
+Continuous integration is a process in which all development work is integrated as early as possible. The resulting artifacts are automatically created and tested. This process allows to identify errors in an early stage of the project. The Jenkins build server is a tool to provide this functionality.
+Introduction about Jenkins
+Jenkins is an open-source automation tool written in Java with plugins built for Continuous Integration purposes. Jenkins is used to build and test your software projects continuously making it easier for developers to integrate changes to the project, and making it easier for users to obtain a fresh build.
+
+Build Cycle
+Jenkins integrates development life-cycle processes of all kinds, including build, document, test, package, stage, deploy, static analysis, and much more. Jenkins achieves Continuous Integration with the help of plugins. Plugins allow the integration of Various DevOps stages
+
+Jenkins Architecture
+The Jenkins CI server checks the repository at regular intervals and pulls any newly available code. The Build Server builds the code into an executable file. In case the build fails, feedback is sent to the developers. Jenkins deploys the build application to the test server.
+
+ Installation –
+1.	Install Java Development Kit (JDK) ...
+2.	Set the Path for the Environmental Variable for JDK. ...
+3.	Download and Install Jenkins. ...
+4.	Run Jenkins on Localhost 8080. ...
+5.	Jenkins Server Interface. ...
+6.	Build and Run a Job on Jenkins.
+
+Obtaining and installing Jenkins
+Installing and conﬁguring Jenkins using WAR and RPM 
+1.	Install OpenJDK Java. ...
+2.	Add Environment Variables for Java. ...
+3.	Install Jenkins from RPM Release Package. ...
+4.	Install Jenkins from WAR file. ...
+5.	Enable Jenkins Service. ...
+6.	Start and Check Status of Jenkins. ...
+7.	Configure firewall exceptions. ...
+8.	Access Jenkins Web Portal.
+If your version of installed java is different, then uninstall it using:
+$ sudo yum uninstall java -y
+After this you can install it using:
+sudo yum install java-1.8.0-openjdk.x86_64 -y 
+Add Environment Variables for Java
+In order to help Jenkins locate the JVM properly, you need to set two environment variables: “JAVA_HOME” and “JRE_HOME”:
+$ export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk
+$ export JRE_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
+Install Jenkins from RPM Release Package
+sudo rpm -iv jenkins-2.150.2-1.1.noarch.rpm
+Install Jenkins from WAR file
+java -jar jenkins.war
+sudo cp jenkins.war /usr/local/bin/jenkins.war
+Enable Jenkins Service
+sudo systemctl enable jenkins.service
+sudo systemctl daemon-reload 
+Start and Check Status of Jenkins
+sudo systemctl start jenkins.service
+sudo systemctl status jenkins.service
+Configure firewall exceptions
+sudo firewall-cmd --zone=public --add-port=8080/tcp --permanent
+sudo firewall-cmd --zone=public --add-service=http --permanent
+sudo firewall-cmd --reload
+
+
+
+
+
+
+
+
+Java installation and conﬁguration : see the above notes
+
+Maven Installation
+Exploring Jenkins Dashboard: see the above notes
+
+
+ 
+Jobs -
+ 
+
+Creating Jobs Running the Job 
+Setting up the global environments for Jobs Adding and updating Plugins
+Disabling and deleting jobs
+
+Build Deployments - Understanding Deployment.
+Tomcat installation and conﬁguration
+
+Securing Jenkins -
+Authentication Jenkins Plugin Authorization Conﬁdentiality Creating users
+
+Pipeline as Code -
+Writing Jenkinsﬁle
+
+
